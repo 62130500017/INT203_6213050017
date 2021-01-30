@@ -43,33 +43,44 @@
 
 
 <body>
-  <div id="song_icon" class="fixed top-5 left-16 z-50">
-    <img src="Images/song.png" class="w-7 h-7 cursor-pointer">
-  </div>
-  <div id="header" class="bg-black h-16 w-full shadow-lg fixed opacity-75">
-    <div id="header_logo" class="fixed">
-      <img src="Images/logo.png" class="ml-5">
-    </div>
-    <nav id="header_content" class="flex flex-wrap content-center text-gray-100 uppercase inline-block h-16 w-full pl-72 text-sm font-sans">
-      <ul>
-        <li class="inline-block ml-8"><a href="#home">home</a></li>
-        <li class="inline-block ml-8"><a href="#news">news</a></li>
-        <li class="inline-block ml-8"><a href="#charecters">charecters</a></li>
-        <li class="inline-block ml-8"><a href="#explore">explore</a></li>
-        <li class="inline-block ml-8"><a href="#forums">forums</a></li>
-        <li class="inline-block ml-8"><a href="#top-up">top-up</a></li>
-        <li class="inline-block ml-8"><a href="#redeem_code">redeem code</a></li> 
-      </ul>
-    </nav>
-    <a href="#download">
-      <img src="Images/download.png" class="h-16 w-48 absolute right-0 top-0">
-    </a>
-  </div>
-  
-  <video class="" poster="Images/47f71d4.jpg" autoplay loop="loop" muted="muted">
+  <video class="h-50% lg:w-full" poster="Images/47f71d4.jpg" autoplay loop="loop" muted="muted">
     <source src="videos/3e78e80.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <nav id="header_content"
+    class="fixed bg-black shadow-lg bg-opacity-70 text-gray-100 uppercase h-16 w-full text-sm z-50 top-0">
+    <div id="song_icon" class="fixed top-5 left-16">
+      <img src="Images/song.png" class="w-7 h-7 cursor-pointer z-50">
+    </div>
+    <div id="header_logo" class="fixed pl-28">
+      <img src="Images/logo_v1.png">
+    </div>
+    <ul class="pl-80 h-16 w-auto flex items-center">
+      <li class="inline-block ml-8"><a href="#home">home</a></li>
+      <li class="inline-block ml-8"><a href="#news">news</a></li>
+      <li class="inline-block ml-8"><a href="#charecters">charecters</a></li>
+      <li class="inline-block ml-8 mb-1"><a href="#explore">
+          explore
+          <i class="material-icons inline-block text-base">
+            arrow_drop_down
+          </i>
+        </a>
+      </li>
+      <li class="inline-block ml-8"><a href="#forums">forums</a></li>
+      <li class="inline-block ml-8"><a href="#top-up">top-up</a></li>
+      <li class="inline-block ml-8"><a href="#redeem_code">redeem code</a></li>
+      <button class="flex items-center login_btn ml-64 opacity-70">
+        Log In
+        <img src="Images/login.png" class="ml-2">
+      </button>
+    </ul>
+
+    <a href="#download">
+      <img src="Images/download.png" class="h-16 w-48 absolute right-0 top-0">
+    </a>
+  </nav>
+
+
 
 
   <!-- my main.js -->

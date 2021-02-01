@@ -12,7 +12,7 @@
 
   <title>Basic Vue Js - HelloWorld App</title>
 
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
   <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
 
@@ -29,7 +29,6 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 
 
-
   <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
 
   <!-- Vue CDN -->
@@ -40,20 +39,20 @@
 
 </head>
 
-
-
 <body>
   <div class="h-72 w-full z-50 absolute top-2/3">
     <div id="playbutton" class="flex justify-center">
     </div>
     <div id="symbol" class="flex items-center justify-center">
-      <div id="circle" class="bg-white w-12 h-12 absolute rounded-full"></div>
       <img src="Images/symbol.png">
-      <i class="material-icons absolute text-4xl text-gray-600">
-        play_arrow
-      </i>
+      <div id="circle" class="group bg-white w-12 h-12 absolute rounded-full cursor-pointer hover:bg-opacity-0">
+        <i class="material-icons text-5xl text-gray-600 group-hover:text-white">
+          play_arrow
+        </i>
+      </div>
     </div>
-    <p class="poster_sub text-3xl text-white text-center m-6 font-normal" style="text-shadow:0 0 10px #724715;">Released on Multiple Platforms - Download Now!
+    <p id="poster_sub" class="text-3xl text-white text-center m-6 font-normal">Released on Multiple Platforms - Download
+      Now!
     </p>
     <div id="poster_download" class="flex justify-center space-x-4">
       <div>
@@ -88,39 +87,43 @@
     <img src="Images/T-poster.png" class="absolute bottom-0 m-3">
   </div>
   <nav id="header_content"
-    class="fixed bg-black shadow-lg bg-opacity-70 text-gray-300 uppercase h-16 w-full text-base z-50 top-0">
+    class="fixed bg-black shadow-lg bg-opacity-70 text-gray-300 uppercase h-16 w-full text-sm z-50 top-0">
     <div id="song_icon" class="fixed top-5 left-16">
       <img src="Images/song.png" class="w-7 h-7 cursor-pointer">
     </div>
     <div id="header_logo" class="fixed ml-28">
       <img src="Images/logo_v1.png">
     </div>
-    <ul class="pl-80 h-16 w-auto flex flex-warp items-center space-x-10">
-      <li><a href="#home">home</a></li>
-      <li><a href="#news">news</a></li>
-      <li><a href="#charecters">charecters</a></li>
-      <li><a href="#explore">
-          explore
-          <i class="material-icons inline-block text-base absolute">
-            arrow_drop_down
-          </i>
-        </a>
+    <ul id="link_hover" class="h-16 ml-80 w-full flex flex-warp items-center space-x-8">
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#home">home</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#news">news</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#charecters">charecters</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><p>explore</p>
+        <ul id=dropdown_list_1 class="absolute bg-black bg-opacity-75 w-52 top-16 -ml-5 text-white hidden">
+          <li id="li_2" class="block p-5 hover:bg-gray-600 hover:bg-opacity-70"><a href="#about">about game</a></li>
+          <li id="li_2" class="block p-5 hover:bg-gray-600 hover:bg-opacity-70"><a href="#about">teyvat</a></li>
+          <li id="li_2" class="block p-5 hover:bg-gray-600 hover:bg-opacity-70"><a href="#about">itenerary</a></li>
+          <li id="li_2" class="block p-5 hover:bg-gray-600 hover:bg-opacity-70"><a href="#about">manga</a></li>
+        </ul>
+        <i class="material-icons text-base align-middle">arrow_drop_down</i>
       </li>
-      </div>
-      <li><a href="#forums">forums</a></li>
-      <li><a href="#top-up">top-up</a></li>
-      <li><a href="#redeem_code">redeem code</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#forums">forums</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#top-up">top-up</a></li>
+      <li id="li_1" class="flex items-center h-full cursor-pointer"><a id="link_1" href="#redeem_code">redeem code</a></li>
     </ul>
-    <button id="login_button" class="absolute top-4 right-52 flex items-center">
+    <button id="login_button" class="hover:text-white absolute top-0 right-52 h-full flex items-center">
       Log In
-      <img src="Images/login.png" class="w-7 h-7 ml-4 opacity-70">
+      <i class="bi bi-person-circle text-2xl ml-4"></i>
     </button>
     <a href="#download">
       <img src="Images/download.png" class="h-16 w-48 absolute right-0 top-0">
     </a>
   </nav>
+
+
   <div id="news" class="absolute -mt-24 flex justify-center">
-    <div id="header_news" class="flex absolute items-center mt-52 border-4 border-green-500 w-full justify-center pb-20">
+    <div id="header_news"
+      class="flex absolute items-center mt-52 border-4 border-green-500 w-full justify-center pb-20">
       <div><img src="Images/new1.png"></div>
       <p class="text-white px-5 text-5xl uppercase">news</p>
       <div><img src="Images/new1.png" class="transform rotate-180"></div>
@@ -138,6 +141,31 @@
   <script src="./main.js"></script>
 
 </body>
+<style>
+  #link_1 a:hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: #fff;
+  }
+  #link_hover li p:hover {
+    text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: #fff;
+  }
+  #li_1:hover {
+    border-top: 5px solid #69e0ff;
+  }
 
+  #poster_sub {
+    text-shadow: 0 0 10px #724715;
+  }
+
+  #header_content {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #li_1:hover #dropdown_list_1{
+    display: block;
+  }
+
+</style>
 
 </html>
